@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "firstName": "Joe",
+    "lastName": "Schmoe",
+    "userName": "joeschmoe@business.com",
+    "position": "Sr. Engineer",
+    "isAdmin": true,
+    "password": "password"
+  },
+  {
+    "id": 2,
+    "firstName": "Sally",
+    "lastName": "Student",
+    "userName": "sallystudent@business.com",
+    "position": "Jr. Engineer",
+    "isAdmin": true,
+    "password": "password"
+  }
+]
