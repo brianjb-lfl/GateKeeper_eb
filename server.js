@@ -34,9 +34,7 @@ const gateKeeper = function(req, res, next) {
   
   // get header item and parse
   const uHdrString = req.get('x-username-and-password');
-  console.log(uHdrString);
   const uLoginObj = queryString.parse(uHdrString);
-  console.log(uLoginObj);
   
   // look for userName
   let foundUser = USERS.find( u => u.userName === uLoginObj.user);
