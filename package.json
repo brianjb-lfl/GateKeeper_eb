@@ -1,0 +1,24 @@
+{
+  "name": "gatekeeper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brianjb-lfl/GateKeeper_eb.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brianjb-lfl/GateKeeper_eb/issues"
+  },
+  "homepage": "https://github.com/brianjb-lfl/GateKeeper_eb#readme",
+  "dependencies": {
+    "express": "^4.15.4",
+    "query-string": "^5.0.0"
+  }
+}
