@@ -29,27 +29,29 @@ const USERS = [
   // ...other users
 ];
 
-function gateKeeper(req, res, next) {
-
-  // your code should replace the line below
+const gateKeeper = function(req, res, next) {
+  // console.log('running gateKeeper');
   
   // get header item and parse
   const uHdrString = req.get('x-username-and-password');
   console.log(uHdrString);
   const uLoginObj = queryString.parse(uHdrString);
   console.log(uLoginObj);
+  
   // look for userName
-  let idx = USERS.find( u => u.userName === uLoginObj.user);
-  console.log(idx);
-  if(idx){
-    console.log('ready for pw check');
-    if(USERS[idx].password === uLoginObj.pass){
-      req.user = USERS[idx];
+  let foundUser = USERS.find( u => u.userName === uLoginObj.user);
+
+  if(foundUser){
+    // check password
+    if(foundUser.password === uLoginObj.pass){
+      req.user = foundUser;
     }
   }
   
   next();
-}
+};
+
+app.use("/api/users/me", gateKeeper);
 
 app.get("/api/users/me", (req, res) => {
   if (req.user === undefined) {
